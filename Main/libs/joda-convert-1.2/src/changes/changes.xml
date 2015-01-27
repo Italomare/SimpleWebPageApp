@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <title>Java convert - Changes</title>
+    <author>Stephen Colebourne</author>
+  </properties>
+
+  <body>
+    <!-- types are add, fix, remove, update -->
+    <release version="1.2" date="2011-10-27">
+      <action dev="scolebourne" type="add" >
+        Add support for CharSequence based fromString methods.
+      </action>
+      <action dev="scolebourne" type="add" >
+        Add support for JSR-310 by reflection, avoiding a dependency.
+      </action>
+      <action dev="scolebourne" type="add" >
+        Allow registration of conversions by method name.
+      </action>
+      <action dev="scolebourne" type="add" >
+        Allow toString conversion to specify the desired type.
+      </action>
+    </release>
+    <release version="1.1.1" date="2011-10-21">
+      <action dev="scolebourne" type="fix" >
+        Allow conversion of primitive types.
+      </action>
+    </release>
+    <release version="1.1.1" date="2011-10-24">
+      <action dev="scolebourne" type="fix" >
+        Allow conversion of primitive types
+      </action>
+    </release>
+    <release version="1.1" date="2010-12-04">
+      <action dev="scolebourne" type="fix" >
+        Enable superclass factories.
+      </action>
+    </release>
+    <release version="1.0" date="2010-09-05">
+      <action dev="scolebourne" type="fix" >
+        Lots of tests and fixes.
+      </action>
+    </release>
+    <release version="0.5" date="unreleased">
+      <action dev="scolebourne" type="fix" >
+        Initial checkin.
+      </action>
+    </release>
+  </body>
+</document>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gdx-backend-headless">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Main/libs/gdx-backend-headless.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

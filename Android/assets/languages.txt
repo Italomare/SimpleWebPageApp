@@ -1,0 +1,41 @@
+{
+    "English":
+    {
+        "ReadMore": "To read the full story, visit:"
+    },
+    "Slovak":
+    {
+        "ReadMore": "Celý článok nájdete na:"
+    },
+    "Czech":
+    {
+    },
+    "Portuguese":
+    {
+    },
+    "German":
+    {
+    },
+    "Polish":
+    {
+    },
+    "Spanish":
+    {
+        "ReadMore": "Para leer la noticia completa, visita:"
+    },
+    "Dutch":
+    {
+    },
+    "French":
+    {
+    },
+    "Russian":
+    {
+    },
+    "Hungarian":
+    {
+    },
+    "Italian":
+    {
+    }
+}

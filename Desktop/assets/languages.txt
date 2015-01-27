@@ -1,0 +1,153 @@
+{
+    "English":
+    {
+        "ReadMore": "To read the full story, visit:",
+        "CallToAction": "Instant Feed. Share Now!",
+        "NoInternet": "Internet not detected!",
+        "FacebookCallToAction": "Post on our wall!",
+        "YelpCallToAction": "Rate us!",
+        "FoursquareCallToAction": "Check in!",
+        "Approval": "Give us a moment to approve your item. Thanks!",
+        "Profanity": "Post may contain profanity.",
+        "FoursquareNotification": "from %s has checked into %s.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": "Updating content!"
+    },
+    "Slovak":
+    {
+        "CallToAction": "Zdieľaj aj ty, naživo!",
+        "NoInternet": "Chyba pripojenia!",
+        "FacebookCallToAction": "Prispej na našu stenu!",
+        "YelpCallToAction": "Ohodnoť nás!",
+        "FoursquareCallToAction": "Daj Check-in!",
+        "Approval": "Tvoj príspevok čaká na schválenie. Vďaka!",
+        "Profanity": "Príspevok obsahuje nevhodné slová.",
+        "FoursquareNotification": "z %s je v %s.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": "Aktualizácia obsahu!"
+    },
+    "Czech":
+    {
+        "CallToAction": "Sdílej i ty, živě!",
+        "NoInternet": "Chyba připojení!",
+        "FacebookCallToAction": "Přidej příspěvek na stěnu!",
+        "YelpCallToAction": "Ohodnoť nás!",
+        "FoursquareCallToAction": "Dej Check in!",
+        "Approval": "Dejte Nám chvilku na schválení Vašeho příspěvku. Děkujeme!",
+        "Profanity": "Příspěvek obsahuje nevhodný obsah.",
+        "FoursquareNotification": "z %s je v %s.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": "Aktualizace obsahu!"
+    },
+    "Portuguese":
+    {
+        "CallToAction": "Feed Instantâneo. Compartilhe Agora!",
+        "NoInternet": "Internet não detectada!",
+        "FacebookCallToAction": "Poste no nosso mural!",
+        "YelpCallToAction": "Avalie-nos!",
+        "FoursquareCallToAction": "Faça check-in!",
+        "Approval": "Seu item está sendo aprovado. Obrigado!",
+        "Profanity": "Seu post contém linguagem imprópria.",
+        "FoursquareNotification": "de %s fez check-in %s.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": "Atualizando conteúdo!"
+    },
+    "German":
+    {
+        "CallToAction": "Sei dabei, teile jetzt!",
+        "NoInternet": "Internet nicht erkannt!",
+        "FacebookCallToAction": "Poste an unsere Wand!",
+        "YelpCallToAction": "Bewerte uns!",
+        "FoursquareCallToAction": "Check ein!",
+        "Approval": "Moment bitte, Beitrag wird genehmigt. Danke!",
+        "Profanity": "Dein Beitrag beinhaltet einen Fluch.",
+        "PoweredByEnplug": "Bereitgestellt von Enplug",
+        "Updating": "Aktualisierung der Inhalte!"
+    },
+    "Polish":
+    {
+        "CallToAction": "Podziel się, teraz!",
+        "NoInternet": "Nie wykryto połączenia z Internetem!",
+        "FacebookCallToAction": "Opublikuj na ścianie!",
+        "YelpCallToAction": "Oceń nas!",
+        "FoursquareCallToAction": "Zamelduj się!",
+        "Approval": "Daj nam chwilę na zatwierdzenie Twojego postu. Dziękujemy!",
+        "Profanity": "Post może zawierać wulgaryzmy.",
+        "PoweredByEnplug": "Możliwe dzięki Enplug",
+        "Updating": "Aktualizacja zawartości!"
+    },
+    "Spanish":
+    {
+        "ReadMore": "Para leer la noticia completa, visita:",
+        "CallToAction": "¡Publica tu tambien ahora mismo!",
+        "NoInternet": "No hay conexión a Internet!",
+        "FacebookCallToAction": "Publica en nuestro muro!",
+        "YelpCallToAction": "Valoranos!",
+        "FoursquareCallToAction": "Check in!",
+        "Approval": "Danos un momento para aprobar tu publicacion. Gracias!",
+        "Profanity": "Este comentario puede contener lenguaje obsceno.",
+        "PoweredByEnplug": "Impulsado por Enplug",
+        "Updating": "Actualizando contenido!"
+    },
+    "Dutch":
+    {
+        "CallToAction": "Instant Feed. Deel nu!",
+        "NoInternet": "Geen internet!",
+        "FacebookCallToAction": "Post op onze wall!",
+        "YelpCallToAction": "Beoordeel ons!",
+        "FoursquareCallToAction": "Check in!",
+        "Approval": "Een ogenblik geduld, je bericht wordt goedgekeurd.",
+        "Profanity": "Ongepaste inhoud gedetecteerd.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": "Vernieuwen van inhoud!"
+    },
+    "French":
+    {
+        "CallToAction": "Messages Instantanés. Affichez le votre!",
+        "NoInternet": "Internet non détecté!",
+        "FacebookCallToAction": "Afficher votre photo sur notre mur!",
+        "YelpCallToAction": "Donnez-nous votre avis!",
+        "FoursquareCallToAction": "Faites votre check in!",
+        "Approval": "Un instant, nous vérifions votre message. Merci!",
+        "Profanity": "Votre message pourrait contenir des propos inappropriés.",
+        "PoweredByEnplug": "Un service Enplug",
+        "Updating": "Mise à jour du contenu!"
+    },
+    "Russian":
+    {
+        "CallToAction": "Попробуй сейчас!",
+        "NoInternet": "Нет доступа к интернету!",
+        "FacebookCallToAction": "Опубликуй на нашей стене!",
+        "YelpCallToAction": "Оцените нас!",
+        "FoursquareCallToAction": "Отметься здесь!",
+        "Approval": "Проверка публикации займет всего минутку. Спасибо!",
+        "Profanity": "",
+        "FoursquareNotification": "из %s has checked into %s.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": ""
+    },
+    "Hungarian":
+    {
+        "CallToAction": "",
+        "NoInternet": "",
+        "FacebookCallToAction": "",
+        "YelpCallToAction": "",
+        "FoursquareCallToAction": "",
+        "Approval": "",
+        "Profanity": "",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": ""
+    },
+    "Italian":
+    {
+        "CallToAction": "Alimentazione istantanea. Condividere ora!",
+        "NoInternet": "Niente Internet!",
+        "FacebookCallToAction": "Pubblicare sul notro muro!",
+        "YelpCallToAction": "Valutaci!",
+        "FoursquareCallToAction": "Fai chech-in!",
+        "Approval": "Dateci un momento per approvare il vostro oggetto. Grazie!",
+        "Profanity": "Il post puo contenere le volgarita.",
+        "PoweredByEnplug": "Powered by Enplug",
+        "Updating": "Aggiornamento dei contenuti!"
+    }
+}

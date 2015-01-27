@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="bodyeditor-loader-sources">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/Main/libs/bodyeditor-loader-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
