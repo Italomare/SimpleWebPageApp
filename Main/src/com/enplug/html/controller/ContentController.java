@@ -2,10 +2,9 @@ package com.enplug.html.controller;
 
 import com.badlogic.gdx.Gdx;
 import com.enplug.common.logging.ILog;
-import com.enplug.html.model.*;
-import com.enplug.html.model.WebPage;
 import com.enplug.sdk.hosting.AppState;
 import com.enplug.sdk.interfaces.*;
+import com.enplug.sdk.model.html.WebPage;
 
 import java.util.List;
 import java.util.Map;
@@ -15,60 +14,34 @@ public class ContentController
     private static final String TAG = "[HTML]:ContentController";
     private static final String WEB_PAGE_DEFINITIONS = "WebURL";
 
-    private final Content _content;
     private final IAssetProvider _assetProvider;
     private final IAppStatusListener _appStateListener;
-    private final IWebViewFactory _webCore;
+    private final IWebViewFactory _webViewFactory;
     private final ILog _log;
+    private WebPage _page;
 
-    public ContentController(Content content,
-                             IServiceProvider serviceProvider,
-                             IWebViewFactory webCore,
-                             ILog log)
+    public ContentController(IServiceProvider serviceProvider, ILog log)
     {
-        _webCore = webCore;
-        _content = content;
-
+        _webViewFactory = serviceProvider.getWebViewFactory();
         _assetProvider = serviceProvider.getAssetProvider();
         _appStateListener = serviceProvider.getAppStatusListener();
         _log = log.getSubLog(TAG);
     }
 
-    public void initialize()
+    public WebPage initialize()
     {
         List<Map> pageDefinitions = _assetProvider.getList(WEB_PAGE_DEFINITIONS);
 
-        if (pageDefinitions != null)
+        if ((pageDefinitions != null) && (!pageDefinitions.isEmpty()))
         {
-            _log.debug("Received %s HTML assets", Integer.toString(pageDefinitions.size()));
-            preparePages(_webCore, pageDefinitions);
-        }
-        else
-        {
-            _log.warn("No HTML assets are available.");
-        }
-    }
-
-    public void dispose()
-    {
-        _content.dispose();
-    }
-
-    private void preparePages(IWebViewFactory webViewFactory, Iterable<Map> pageDefinitions)
-    {
-        boolean hasValidPage = false;
-        _log.debug("Preparing page...");
-
-        for (Map pageDefinition : pageDefinitions)
-        {
-            WebPage page = new WebPage(pageDefinition);
-            if (page.isValid())
+            Map pageDefinition = pageDefinitions.get(0);
+            _log.debug("Received HTML asset.");
+            _page = new WebPage(pageDefinition);
+            if (_page.isValid())
             {
-                page.load(webViewFactory, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-                _content.addContent(page);
+                _page.load(_webViewFactory, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                _page.show();
                 _appStateListener.onStateChanged(AppState.Ready);
-                hasValidPage = true;
-                break;
             }
             else
             {
@@ -76,18 +49,27 @@ public class ContentController
                 _appStateListener.onStateChanged(AppState.Error);
             }
         }
-
-        if (!hasValidPage)
+        else
         {
-            String reason = "No valid pages found.";
-            _log.error(reason);
-            throw new RuntimeException(reason);
+            _log.debug("No HTML assets are available.");
+        }
+        return _page;
+    }
+
+    public void dispose()
+    {
+        if (_page != null)
+        {
+            _page.dispose();
         }
     }
 
     public void resize(int width, int height)
     {
-        _content.resize(width, height);
+        if (_page != null)
+        {
+            _page.resize(width, height);
+        }
     }
 }
 

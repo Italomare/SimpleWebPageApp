@@ -4,11 +4,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.enplug.common.logging.ILog;
 import com.enplug.html.controller.ContentController;
-import com.enplug.html.model.Content;
 import com.enplug.html.view.HTMLScreen;
 import com.enplug.sdk.hosting.HostedGame;
 import com.enplug.sdk.interfaces.IServiceProvider;
-import com.enplug.sdk.interfaces.IWebViewFactory;
+import com.enplug.sdk.model.html.WebPage;
 import com.enplug.sdk.model.social.SocialFeedDefinition;
 
 import java.util.List;
@@ -18,11 +17,8 @@ public class HTMLApp extends HostedGame
     private static final String TAG = "[HTML]";
     private static final int APP_VERSION = 1;
 
-    private ILog _log;
-    private Content _content;
     private ContentController _contentController;
-
-    public IWebViewFactory _webViewFactory;
+    private ILog _log;
 
     @Override
     public void initialize(IServiceProvider serviceProvider, List<SocialFeedDefinition> feeds, boolean isLandscape, String language)
@@ -34,20 +30,14 @@ public class HTMLApp extends HostedGame
             _log = serviceProvider.getLog().getSubLog(TAG);
             _log.info("Initializing app.");
 
-            _webViewFactory = serviceProvider.getWebViewFactory();
+            _contentController = new ContentController(serviceProvider, _log);
 
-            _content = new Content();
+            WebPage page = _contentController.initialize();
+            _screen = new HTMLScreen(page);
 
-            _screen = new HTMLScreen(_content);
-
-            _contentController = new ContentController(_content,
-                                                serviceProvider,
-                                                _webViewFactory,
-                                                _log);
-            _contentController.initialize();
             _log.info("Initialized app.");
         }
-        catch (Exception e)
+        catch (RuntimeException e)
         {
             e.printStackTrace();
             _log.exception(e, "initialize");
@@ -62,7 +52,7 @@ public class HTMLApp extends HostedGame
         {
             setScreen(_screen);
         }
-        catch (Exception e)
+        catch (RuntimeException e)
         {
             _log.exception(e, "create");
             throw new RuntimeException(e);
@@ -75,11 +65,6 @@ public class HTMLApp extends HostedGame
         if (_screen != null)
         {
             _screen.dispose();
-        }
-
-        if (_content != null)
-        {
-             _content.dispose();
         }
 
         if (_contentController != null)

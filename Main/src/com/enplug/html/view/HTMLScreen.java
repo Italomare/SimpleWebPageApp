@@ -6,16 +6,16 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.enplug.html.model.Content;
+import com.enplug.sdk.model.html.WebPage;
 
 public class HTMLScreen implements Screen
 {
-    private final Content _content;
+    private final WebPage _page;
     private SpriteBatch _batch;
 
-    public HTMLScreen(Content content)
+    public HTMLScreen(WebPage page)
     {
-        _content = content;
+        _page = page;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class HTMLScreen implements Screen
         _batch.begin();
         try
         {
-            renderContent(_content);
+            renderContent(_page);
         }
         finally
         {
@@ -35,11 +35,11 @@ public class HTMLScreen implements Screen
         }
     }
 
-    private void renderContent(Content content)
+    private void renderContent(WebPage page)
     {
-        if (content != null)
+        if (page != null)
         {
-            content.render(_batch);
+            page.draw(_batch, 0, 0);
         }
     }
 
@@ -50,7 +50,7 @@ public class HTMLScreen implements Screen
         camera.position.set(width / 2.0f, height / 2.0f, 0.0f);
         camera.update();
         _batch.setProjectionMatrix(camera.combined);
-        _content.resize(width, height);
+        _page.resize(width, height);
     }
 
     @Override
