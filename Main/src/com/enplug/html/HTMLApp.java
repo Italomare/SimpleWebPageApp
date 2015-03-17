@@ -7,6 +7,7 @@ import com.enplug.html.controller.ContentController;
 import com.enplug.html.view.HTMLScreen;
 import com.enplug.sdk.hosting.HostedGame;
 import com.enplug.sdk.interfaces.IServiceProvider;
+import com.enplug.sdk.interfaces.IWebView;
 import com.enplug.sdk.model.html.WebPage;
 import com.enplug.sdk.model.social.SocialFeedDefinition;
 
@@ -21,7 +22,7 @@ public class HTMLApp extends HostedGame
     private ILog _log;
 
     @Override
-    public void initialize(IServiceProvider serviceProvider, List<SocialFeedDefinition> feeds, boolean isLandscape, String language)
+    public void initialize(IServiceProvider serviceProvider)
     {
         try
         {
@@ -32,8 +33,8 @@ public class HTMLApp extends HostedGame
 
             _contentController = new ContentController(serviceProvider, _log);
 
-            WebPage page = _contentController.initialize();
-            _screen = new HTMLScreen(page);
+            IWebView view = _contentController.initialize();
+            _screen = new HTMLScreen(view);
 
             _log.info("Initialized app.");
         }

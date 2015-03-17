@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="enplug-test-main">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Main/libs/enplug-test-main.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/Main/libs/enplug-test-main.jar!/generated" />
+    </SOURCES>
+  </library>
+</component>

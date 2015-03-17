@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="enplug-test-android">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Android/libs/enplug-test-android.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/Android/libs/enplug-test-android.jar!/generated" />
+    </SOURCES>
+  </library>
+</component>

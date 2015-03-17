@@ -18,7 +18,7 @@ public class ContentController
     private final IAppStatusListener _appStateListener;
     private final IWebViewFactory _webViewFactory;
     private final ILog _log;
-    private WebPage _page;
+    private IWebView _view;
 
     public ContentController(IServiceProvider serviceProvider, ILog log)
     {
@@ -28,19 +28,20 @@ public class ContentController
         _log = log.getSubLog(TAG);
     }
 
-    public WebPage initialize()
+    public IWebView initialize()
     {
-        List<Map> pageDefinitions = _assetProvider.getList(WEB_PAGE_DEFINITIONS);
+        List<Map<String, Object>> pageDefinitions = _assetProvider.getList(WEB_PAGE_DEFINITIONS);
 
         if ((pageDefinitions != null) && (!pageDefinitions.isEmpty()))
         {
-            Map pageDefinition = pageDefinitions.get(0);
+            Map<String, Object> pageDefinition = pageDefinitions.get(0);
             _log.debug("Received HTML asset.");
-            _page = new WebPage(pageDefinition);
-            if (_page.isValid())
+            WebPage page = new WebPage(pageDefinition);
+            if (page.isValid())
             {
-                _page.load(_webViewFactory, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-                _page.show();
+                _view = _webViewFactory.createView(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                _view.loadPage(page);
+                _view.show();
                 _appStateListener.onStateChanged(AppState.Ready);
             }
             else
@@ -53,22 +54,22 @@ public class ContentController
         {
             _log.debug("No HTML assets are available.");
         }
-        return _page;
+        return _view;
     }
 
     public void dispose()
     {
-        if (_page != null)
+        if (_view != null)
         {
-            _page.dispose();
+            _view.dispose();
         }
     }
 
     public void resize(int width, int height)
     {
-        if (_page != null)
+        if (_view != null)
         {
-            _page.resize(width, height);
+            _view.resize(width, height);
         }
     }
 }
