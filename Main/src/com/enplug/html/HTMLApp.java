@@ -15,7 +15,6 @@ import java.util.List;
 
 public class HTMLApp extends HostedGame
 {
-    private static final String TAG = "[HTML]";
     private static final int APP_VERSION = 1;
 
     private ContentController _contentController;
@@ -28,7 +27,7 @@ public class HTMLApp extends HostedGame
         {
             // initialize external dependencies
             //
-            _log = serviceProvider.getLog().getSubLog(TAG);
+            _log = serviceProvider.getLog().getSubLog(this);
             _log.info("Initializing app.");
 
             _contentController = new ContentController(serviceProvider, _log);
